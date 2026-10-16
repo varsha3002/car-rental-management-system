@@ -1,0 +1,677 @@
+
+/* ========================================
+   CAR RENTAL SYSTEM — PASTEL APP THEME
+   ======================================== */
+
+/* Global font and colors */
+:root {
+  --page-blue: #dcecf5;
+  --light-blue: #eaf4fb;
+  --card-white: #ffffff;
+  --purple: #c58af5;
+  --purple-hover: #b477eb;
+  --dark-text: #343c50;
+  --muted-text: #8995ad;
+  --border-color: #e5eaf3;
+  --soft-shadow: 0 6px 20px rgba(68, 94, 130, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background: var(--light-blue);
+  color: var(--dark-text);
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+label,
+button,
+input,
+select,
+textarea {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--dark-text);
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 16px 5%;
+  background: var(--card-white);
+  box-shadow: 0 3px 15px rgba(68, 94, 130, 0.07);
+}
+
+.navbar a {
+  color: var(--dark-text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: var(--purple-hover);
+}
+
+/* ========================================
+   BUTTONS — COMPACT PURPLE PILL STYLE
+   ======================================== */
+
+button,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 18px;
+  min-height: 32px;
+  border: none;
+  border-radius: 999px;
+  background: var(--purple);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--purple-hover);
+  color: #ffffff;
+}
+
+button:active,
+.btn:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Car card action buttons */
+.car-card button {
+  display: flex;
+  width: fit-content;
+  min-width: 75px;
+  margin: 12px auto 0;
+  padding: 7px 18px;
+}
+
+/* Navbar buttons */
+.navbar button {
+  min-height: 30px;
+  padding: 6px 16px;
+}
+
+/* ========================================
+   PAGE BACKGROUNDS
+   ======================================== */
+
+.home-page,
+.cars-page,
+.login-page,
+.register-page,
+.booking-page,
+.payment-page,
+.my-bookings-page,
+.admin-page {
+  min-height: 100vh;
+  padding: 32px 5%;
+  background: var(--light-blue);
+}
+
+/* ========================================
+   HEADINGS
+   ======================================== */
+
+.cars-header,
+.page-header {
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.cars-header h1,
+.page-header h1 {
+  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.cars-header p,
+.page-header p {
+  color: var(--muted-text);
+}
+
+/* ========================================
+   WHITE PANELS AND CARDS
+   ======================================== */
+
+.car-filters,
+.car-card,
+.booking-card,
+.login-card,
+.register-card,
+.payment-card,
+.form-card,
+.dashboard-card,
+.booking-item {
+  background: var(--card-white);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: var(--soft-shadow);
+}
+
+.car-filters {
+  max-width: 1100px;
+  margin: 0 auto 28px;
+  padding: 24px;
+}
+
+.car-filters h2 {
+  margin-top: 0;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+/* ========================================
+   FILTERS
+   ======================================== */
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  align-items: end;
+}
+
+.filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-field label {
+  color: #6e7c96;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ========================================
+   INPUTS AND SELECT MENUS
+   ======================================== */
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 13px;
+  border: 1px solid #e0e7f1;
+  border-radius: 11px;
+  background: #f8fbff;
+  color: var(--dark-text);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--purple);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a1abc0;
+}
+
+input[readonly] {
+  background: #f0f5fb;
+  cursor: default;
+}
+
+/* ========================================
+   CAR LIST — NO LARGE CAR PHOTOGRAPHS
+   ======================================== */
+
+.car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+  max-width: 1200px;
+  margin: 25px auto;
+}
+
+.car-card {
+  padding: 22px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(68, 94, 130, 0.15);
+}
+
+.car-card h2 {
+  margin: 0 0 12px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.car-card p {
+  margin: 9px 0;
+  color: var(--muted-text);
+  font-size: 12px;
+}
+
+.car-price {
+  margin: 16px 0;
+  color: #8f65df;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Remove existing photo containers if still present */
+.car-image-container,
+.car-image {
+  display: none !important;
+}
+
+/* Optional illustrated-car placeholder */
+.car-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  margin-bottom: 16px;
+  border-radius: 15px;
+  background: var(--page-blue);
+  font-size: 58px;
+}
+
+/* ========================================
+   BOOKING AND PAYMENT
+   ======================================== */
+
+.booking-card,
+.login-card,
+.register-card,
+.payment-card,
+.form-card {
+  width: 100%;
+  max-width: 480px;
+  margin: 20px auto;
+  padding: 28px;
+}
+
+.booking-card h1,
+.login-card h1,
+.register-card h1,
+.payment-card h1 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.booking-form,
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.booking-form label,
+.login-form label,
+.register-form label {
+  margin-top: 4px;
+  color: #6e7c96;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.booking-form button,
+.login-form button,
+.register-form button,
+.payment-card button {
+  align-self: center;
+  margin-top: 12px;
+}
+
+/* Selected car and total amount */
+.selected-car {
+  margin: 18px 0;
+  padding: 18px;
+  border-radius: 15px;
+  background: #f1f7fc;
+}
+
+.selected-car h2,
+.selected-car h3 {
+  margin-bottom: 8px;
+}
+
+/* ========================================
+   BOOKING HISTORY AND ADMIN TABLES
+   ======================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-white);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 13px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+  font-size: 12px;
+}
+
+th {
+  background: #edf5fb;
+  color: #566681;
+  font-weight: 600;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ========================================
+   STATUS MESSAGES
+   ======================================== */
+
+.cars-count {
+  margin: 22px 0;
+  color: var(--muted-text);
+  text-align: center;
+}
+
+.cars-error,
+.no-cars {
+  padding: 20px;
+  color: #71819c;
+  text-align: center;
+}
+
+.error-message {
+  color: #c24141;
+}
+
+.success-message {
+  color: #25845b;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 600px) {
+  .home-page,
+  .cars-page,
+  .login-page,
+  .register-page,
+  .booking-page,
+  .payment-page,
+  .my-bookings-page,
+  .admin-page {
+    padding: 22px 14px;
+  }
+
+  .cars-header h1,
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .car-filters {
+    padding: 17px;
+  }
+
+  .car-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .booking-card,
+  .login-card,
+  .register-card,
+  .payment-card,
+  .form-card {
+    padding: 20px;
+  }
+
+  .navbar {
+    padding: 14px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+ 
+/* Home page theme */
+.home-page {
+  min-height: 100vh;
+  padding: 35px 5%;
+  background: #eaf4fb;
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 35px;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 45px;
+  background: #fff;
+  border: 1px solid #e5eaf3;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(68, 94, 130, 0.10);
+}
+
+.home-tag {
+  display: inline-block;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: #f0e5ff;
+  color: #9364d7;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.home-content h1 {
+  margin: 20px 0 12px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.home-content h1 span {
+  color: #b477eb;
+}
+
+.home-content > p {
+  max-width: 470px;
+  color: #8995ad;
+  line-height: 1.9;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.home-actions button {
+  padding: 9px 20px;
+}
+
+.home-actions .secondary-button {
+  background: #f0e5ff;
+  color: #9364d7;
+}
+
+.home-actions .secondary-button:hover {
+  background: #e6d3ff;
+}
+
+.home-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 35px;
+}
+
+.home-features div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.home-features strong {
+  font-size: 14px;
+  color: #45536d;
+}
+
+.home-features span {
+  font-size: 12px;
+  color: #8995ad;
+}
+
+.home-illustration {
+  text-align: center;
+}
+
+.illustration-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 320px);
+  aspect-ratio: 1;
+  margin: auto;
+  border-radius: 50%;
+  background: #e2f0fa;
+}
+
+.illustration-circle span {
+  font-size: clamp(100px, 15vw, 175px);
+}
+
+.illustration-caption {
+  margin-top: 16px;
+  color: #8995ad;
+  font-size: 13px;
+}
+
+.home-bottom {
+  max-width: 1150px;
+  margin: 45px auto 0;
+  text-align: center;
+}
+
+.home-bottom > p {
+  color: #8995ad;
+}
+
+.home-feature-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.home-feature-card {
+  padding: 25px;
+  border: 1px solid #e5eaf3;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(68, 94, 130, 0.08);
+}
+
+.feature-icon {
+  margin-bottom: 12px;
+  font-size: 32px;
+}
+
+.home-feature-card h3 {
+  font-size: 17px;
+}
+
+.home-feature-card p {
+  min-height: 45px;
+  color: #8995ad;
+  font-size: 13px;
+}
+
+@media (max-width: 750px) {
+  .home-page {
+    padding: 20px 14px;
+  }
+
+  .home-hero {
+    grid-template-columns: 1fr;
+    padding: 25px;
+  }
+
+  .home-illustration {
+    grid-row: 1;
+  }
+
+  .illustration-circle {
+    width: 190px;
+  }
+
+  .illustration-circle span {
+    font-size: 100px;
+  }
+
+  .home-feature-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .home-features {
+    gap: 18px;
+  }
+}
