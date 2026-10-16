@@ -48,3 +48,7 @@ A full-stack web application that allows users to explore available cars, make r
 ## Note
 
 The payment workflow is a simulation and does not process real payments.
+
+## Screenshots<img width="1895" height="887" alt="car-listings" src="https://github.com/user-attachments/assets/7db5e8bb-da39-4337-ab50-3eafbe3697c7" />
+
+
